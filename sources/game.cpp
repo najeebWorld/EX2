@@ -35,9 +35,25 @@ using namespace ariel ;
  }
 
 void Game::playTurn(){
+    if(playerP1.stacksize() == 0 || playerP2.stacksize() == 0)
+    {
+        throw std::runtime_error("game over");
 
-    
+    }
+    if(playerP1.stacksize()==0 && playerP2.stacksize() != 0)
+    {
+        throw std::runtime_error(playerP1.getName() + "dont have cards");
+    }
+    if(playerP2.stacksize()==0 && playerP1.stacksize() != 0)
+    {
+        throw std :: runtime_error(playerP2.getName() + "dont have cards");
+    }
 
+    //need to add here defination if they both have the same size of cards
+
+    // try{
+    //     card c1 = playe
+    // }
 }
 
 void Game::printLastTurn(){}
